@@ -93,6 +93,66 @@
 <footer>
   © 2026 Norte Acessórios — Enviamos para todo o Brasil 🇧🇷
 </footer>
+<section class="produtos">
+  <h2>Nossos Produtos</h2>
 
+  <div class="grid">
+    <div class="card">
+      <img src="https://via.placeholder.com/300" alt="Fone Bluetooth">
+      <h3>Fone Bluetooth</h3>
+      <p>Som de qualidade, bateria durável</p>
+      <span>R$ 79,90</span>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300" alt="Boné">
+      <h3>Boné Estiloso</h3>
+      <p>Modelo premium</p>
+      <span>R$ 59,90</span>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300" alt="Corrente">
+      <h3>Corrente Masculina</h3>
+      <p>Aço inoxidável</p>
+      <span>R$ 49,90</span>
+    </div>
+  </div>
+</section>
+
+<style>
+.produtos {
+  padding: 30px;
+  text-align: center;
+}
+
+.produtos h2 {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #00ff88;
+}
+</style>
 </body>
 </html>
