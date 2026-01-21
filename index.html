@@ -19,17 +19,62 @@
 
   <main>
     <h2>Bem-vindo à Norte Acessórios!</h2>
-    <p>Escolha a categoria de produtos abaixo:</p>
+    <p>Confira nossos produtos abaixo:</p>
 
-    <div class="categorias">
-      <button onclick="mostrarCategoria('fones')">Fones de Ouvido</button>
-      <button onclick="mostrarCategoria('capinhas')">Capinhas</button>
-      <button onclick="mostrarCategoria('carregadores')">Carregadores</button>
-      <button onclick="mostrarCategoria('bones')">Bonés</button>
-    </div>
+    <div class="produtos-container">
 
-    <div id="produtos-categoria">
-      <!-- Aqui aparecerão os modelos -->
+      <!-- Fones -->
+      <div class="produto">
+        <h3>Fone Bluetooth X</h3>
+        <p>Preço: R$ 79,90</p>
+        <button onclick="adicionarCarrinho('Fone Bluetooth X', 79.90)">Adicionar ao carrinho</button>
+      </div>
+
+      <div class="produto">
+        <h3>Fone Gamer Y</h3>
+        <p>Preço: R$ 129,90</p>
+        <button onclick="adicionarCarrinho('Fone Gamer Y', 129.90)">Adicionar ao carrinho</button>
+      </div>
+
+      <!-- Capinhas -->
+      <div class="produto">
+        <h3>Capinha iPhone 14</h3>
+        <p>Preço: R$ 29,90</p>
+        <button onclick="adicionarCarrinho('Capinha iPhone 14', 29.90)">Adicionar ao carrinho</button>
+      </div>
+
+      <div class="produto">
+        <h3>Capinha Samsung S22</h3>
+        <p>Preço: R$ 25,90</p>
+        <button onclick="adicionarCarrinho('Capinha Samsung S22', 25.90)">Adicionar ao carrinho</button>
+      </div>
+
+      <!-- Carregadores -->
+      <div class="produto">
+        <h3>Carregador USB 20W</h3>
+        <p>Preço: R$ 39,90</p>
+        <button onclick="adicionarCarrinho('Carregador USB 20W', 39.90)">Adicionar ao carrinho</button>
+      </div>
+
+      <div class="produto">
+        <h3>Carregador Turbo 30W</h3>
+        <p>Preço: R$ 59,90</p>
+        <button onclick="adicionarCarrinho('Carregador Turbo 30W', 59.90)">Adicionar ao carrinho</button>
+      </div>
+
+      <!-- Bonés -->
+      <div class="produto">
+        <h3>Boné Preto</h3>
+        <p>Preço: R$ 49,90</p>
+        <button onclick="adicionarCarrinho('Boné Preto', 49.90)">Adicionar ao carrinho</button>
+      </div>
+
+      <div class="produto">
+        <h3>Boné Azul</h3>
+        <p>Preço: R$ 44,90</p>
+        <button onclick="adicionarCarrinho('Boné Azul', 44.90)">Adicionar ao carrinho</button>
+      </div>
+
     </div>
   </main>
 
