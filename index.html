@@ -1,166 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Norte Acessórios</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    body {
-      margin: 0;
+    body{
+      margin:0;
       font-family: Arial, sans-serif;
-      background: #0e0e0e;
-      color: #ffffff;
+      background:#f2f2f2;
     }
-    header {
-      background: #000000;
-      padding: 15px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
+    header{
+      background:#000;
+      color:#fff;
+      text-align:center;
+      padding:15px;
+      font-size:22px;
+      font-weight:bold;
     }
-    .banner {
-      padding: 40px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #111, #222);
+    .container{
+      padding:20px;
     }
-    .banner h1 {
-      margin-bottom: 10px;
-      font-size: 32px;
+    .card{
+      background:#fff;
+      border-radius:10px;
+      padding:15px;
+      box-shadow:0 2px 8px rgba(0,0,0,.1);
+      text-align:center;
     }
-    .banner p {
-      font-size: 18px;
-      color: #cccccc;
+    .card img{
+      width:100%;
+      border-radius:10px;
     }
-    .produtos {
-      padding: 20px;
+    .card h3{
+      margin:15px 0 5px;
     }
-    .produto {
-      background: #1a1a1a;
-      margin-bottom: 15px;
-      padding: 15px;
-      border-radius: 8px;
+    .price{
+      font-size:22px;
+      font-weight:bold;
+      margin:10px 0;
     }
-    .produto h3 {
-      margin: 0 0 5px 0;
+    .buy-btn{
+      display:block;
+      padding:12px;
+      background:#25d366;
+      color:#000;
+      text-decoration:none;
+      font-weight:bold;
+      border-radius:8px;
+      margin-top:10px;
     }
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      color: #aaa;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #25d366;
-      color: #000;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
+    footer{
+      background:#000;
+      color:#fff;
+      text-align:center;
+      padding:10px;
+      margin-top:20px;
+      font-size:14px;
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  NORTE ACESSÓRIOS
+  Norte Acessórios
 </header>
 
-<section class="banner">
-  <h1>Os melhores acessórios</h1>
-  <p>Capinhas • Fones • Bonés • Carregadores</p>
-  <a class="btn" href="https://wa.me/55SEUNUMERO">Comprar no WhatsApp</a>
-</section>
+<div class="container">
 
-<section class="produtos">
-  <div class="produto">
-    <h3>Capinhas Premium</h3>
-    <p>Proteção e estilo pro seu celular.</p>
+  <div class="card">
+    <img src="fone.jpg" alt="Fone Bluetooth">
+    <h3>Fone Bluetooth</h3>
+    <p>Som potente, bateria durável e conexão rápida</p>
+    <div class="price">R$ 49,90</div>
+    <a class="buy-btn" href="https://wa.me/5511953021298?text=Olá,%20quero%20comprar%20o%20Fone%20Bluetooth%20por%20R$49,90">
+      Comprar no WhatsApp
+    </a>
   </div>
-  <div class="produto">
-    <h3>Fones de Ouvido</h3>
-    <p>Qualidade e grave potente.</p>
-  </div>
-  <div class="produto">
-    <h3>Bonés e Acessórios</h3>
-    <p>Estilo que combina com você.</p>
-  </div>
-</section>
+
+</div>
 
 <footer>
-  © 2026 Norte Acessórios — Enviamos para todo o Brasil 🇧🇷
+  Enviamos para todo o Brasil • Correios<br>
+  Pagamento via Pix (Inter)
 </footer>
-<section class="produtos">
-  <h2>Nossos Produtos</h2>
 
-  <div class="grid">
-    <div class="card">
-      <img src="https://via.placeholder.com/300" alt="Fone Bluetooth">
-      <h3>Fone Bluetooth</h3>
-      <p>Som de qualidade, bateria durável</p>
-      <span>R$ 79,90</span>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300" alt="Boné">
-      <h3>Boné Estiloso</h3>
-      <p>Modelo premium</p>
-      <span>R$ 59,90</span>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300" alt="Corrente">
-      <h3>Corrente Masculina</h3>
-      <p>Aço inoxidável</p>
-      <span>R$ 49,90</span>
-    </div>
-  </div>
-</section>
-
-<style>
-.produtos {
-  padding: 30px;
-  text-align: center;
-}
-
-.produtos h2 {
-  margin-bottom: 20px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #111;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.card span {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #00ff88;
-}<div class="card">
-  <img src="https://via.placeholder.com/300" alt="Fone Bluetooth">
-  <h3>Fone Bluetooth</h3>
-  <p>Som potente, bateria durável e conexão rápida</p>
-  <span>R$ 79,90</span>
-  <a class="buy-btn" href="https://wa.me/5511953021298?text=Olá,%20quero%20comprar%20o%20Fone%20Bluetooth%20por%20R$79,90">
-    Comprar no WhatsApp
-  </a>
-</div>
-</style>
 </body>
 </html>
