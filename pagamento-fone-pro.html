@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Fones de Ouvido - Norte Acessórios</title>
+  <title>Fone Pro - Pagamento Pix</title>
   <style>
     body {
       background: black;
@@ -12,48 +12,79 @@
       padding: 20px;
     }
 
-    .modelo {
-      display: block;
+    img {
+      width: 250px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    .preco {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+
+    textarea {
+      width: 90%;
+      height: 110px;
       margin: 15px auto;
-      padding: 15px;
-      border-radius: 12px;
-      width: 200px;
-      font-size: 18px;
-      text-decoration: none;
-      text-align: center;
+      display: block;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #00c853;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 16px;
       font-weight: bold;
-    }
-
-    .ativo {
-      background-color: #00d4ff;
-      color: black;
-    }
-
-    .desativado {
-      background-color: #1f1f1f;
-      color: #777;
-      cursor: default;
+      cursor: pointer;
+      margin-bottom: 20px;
     }
 
     a {
+      color: #00ff99;
       text-decoration: none;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
 
-  <h1>🎧 Fones de Ouvido</h1>
-  <p>Escolha o modelo:</p>
+  <h1>Fone Bluetooth Air Pods 3</h1>
 
-  <!-- Modelos -->
-  <div class="modelo desativado">Fone Preto</div>
-  <div class="modelo desativado">Fone Branco</div>
+  <!-- FOTO DO PRODUTO -->
+  <img src="img/IMG_9737.jpeg" alt="Fone Bluetooth Air Pods 3">
 
-  <!-- Só o Pro tem compra -->
-  <a href="pagamento-fone-pro.html" class="modelo ativo">Fone Pro 🔥</a>
+  <!-- VALOR -->
+  <p class="preco">💰 R$ 49,90</p>
+
+  <!-- PIX -->
+  <p>Copie o código Pix abaixo e pague no app do banco:</p>
+
+  <textarea id="pixCode" readonly>
+00020126580014br.gov.bcb.pix01363f22176e-5f34-4997-b601-9b8f231bb49a520400005303986540549.905802BR5916Norte Acessorios6009Sao Paulo62240520daqr21718071124307686304249A
+  </textarea>
+
+  <!-- BOTÃO DE COPIAR PIX -->
+  <button onclick="copiarPix()">Copiar código Pix</button>
 
   <br>
-  <a href="index.html">⬅ Voltar</a>
+
+  <a href="produto-fone.html">⬅ Voltar para produtos</a>
+
+  <script>
+    function copiarPix() {
+      const codigo = document.getElementById("pixCode");
+      codigo.select();
+      codigo.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Código Pix copiado!");
+    }
+  </script>
 
 </body>
 </html>
