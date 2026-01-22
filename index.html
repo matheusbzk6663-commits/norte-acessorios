@@ -9,25 +9,55 @@
     body{
       margin:0;
       font-family: Arial, sans-serif;
-      background:#f4f4f4;
-      text-align:center;
-    }
-    header{
       background:#000;
       color:#fff;
-      padding:20px;
-      font-size:26px;
-      font-weight:bold;
     }
+
+    header{
+      padding:50px 20px;
+      text-align:center;
+      font-size:38px;
+      font-weight:bold;
+      border-bottom:1px solid #333;
+    }
+
+    .sub{
+      text-align:center;
+      font-size:16px;
+      color:#bbb;
+      margin-bottom:40px;
+    }
+
     .container{
-      padding:30px 20px;
+      padding:20px;
     }
-    a{
-      display:block;
-      margin-top:15px;
+
+    .menu{
+      background:#111;
+      padding:18px;
+      margin-bottom:15px;
+      border-radius:8px;
+      font-size:20px;
+      border:1px solid #222;
+      text-align:center;
+    }
+
+    .menu a{
       text-decoration:none;
+      color:#fff;
+      display:block;
       font-weight:bold;
-      color:#000;
+    }
+
+    .menu:hover{
+      background:#1a1a1a;
+    }
+
+    footer{
+      text-align:center;
+      font-size:14px;
+      color:#888;
+      margin:40px 0 20px;
     }
   </style>
 </head>
@@ -35,14 +65,28 @@
 <body>
 
 <header>
-  Norte Acessórios
+  NORTE ACESSÓRIOS
 </header>
 
-<div class="container">
-  <p>Bem-vindo à nossa loja</p>
-
-  <a href="sobre.html">➡ Sobre a loja</a>
+<div class="sub">
+  Loja online • Envio para todo o Brasil
 </div>
-<a href="produtos.html">➡ Ver produtos</a>
+
+<div class="container">
+
+  <div class="menu">
+    <a href="produtos.html">🛒 Ver Produtos</a>
+  </div>
+
+  <div class="menu">
+    <a href="sobre.html">ℹ️ Sobre a Loja</a>
+  </div>
+
+</div>
+
+<footer>
+  © Norte Acessórios • Correios • Pix Inter
+</footer>
+
 </body>
 </html>
