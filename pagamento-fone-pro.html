@@ -1,1 +1,59 @@
-Adicionar página de pagamento Fone Pro
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fones de Ouvido - Norte Acessórios</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .modelo {
+      display: block;
+      margin: 15px auto;
+      padding: 15px;
+      border-radius: 12px;
+      width: 200px;
+      font-size: 18px;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .ativo {
+      background-color: #00d4ff;
+      color: black;
+    }
+
+    .desativado {
+      background-color: #1f1f1f;
+      color: #777;
+      cursor: default;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎧 Fones de Ouvido</h1>
+  <p>Escolha o modelo:</p>
+
+  <!-- Modelos -->
+  <div class="modelo desativado">Fone Preto</div>
+  <div class="modelo desativado">Fone Branco</div>
+
+  <!-- Só o Pro tem compra -->
+  <a href="pagamento-fone-pro.html" class="modelo ativo">Fone Pro 🔥</a>
+
+  <br>
+  <a href="index.html">⬅ Voltar</a>
+
+</body>
+</html>
