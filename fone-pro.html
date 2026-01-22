@@ -10,15 +10,39 @@
       font-family: Arial, sans-serif;
       text-align: center;
     }
+
     img {
       width: 250px;
       margin: 10px;
       border-radius: 10px;
     }
+
     a {
       color: #00ff99;
       text-decoration: none;
       font-size: 18px;
+    }
+
+    textarea {
+      width: 90%;
+      height: 110px;
+      margin: 15px auto;
+      display: block;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #00c853;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -26,11 +50,33 @@
 
   <h1>Fone Bluetooth Pro</h1>
 
-  <img src="/norte-acessorios/img/IMG_9737.jpeg">
+  <!-- FOTO (NÃO SOME) -->
+  <img src="/norte-acessorios/img/IMG_9737.jpeg" alt="Fone Bluetooth Pro">
 
   <p style="font-size: 24px;">💰 R$ 49,90</p>
 
+  <!-- ÁREA DE PAGAMENTO (SÓ NO PRO) -->
+  <p>Copie o código Pix abaixo e pague no app do banco:</p>
+
+  <textarea id="pixCode" readonly>
+00020126580014br.gov.bcb.pix01363f22176e-5f34-4997-b601-9b8f231bb49a520400005303986540549.905802BR5916Norte Acessorios6009Sao Paulo62240520daqr21718071124307686304249A
+  </textarea>
+
+  <button onclick="copiarPix()">Copiar código Pix</button>
+
+  <br>
+
   <a href="index.html">⬅ Voltar</a>
+
+  <script>
+    function copiarPix() {
+      const codigo = document.getElementById("pixCode");
+      codigo.select();
+      codigo.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Código Pix copiado!");
+    }
+  </script>
 
 </body>
 </html>
