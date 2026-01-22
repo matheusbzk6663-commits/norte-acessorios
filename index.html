@@ -1,93 +1,62 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Norte Acessórios</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#f4f4f4;
+      text-align:center;
+    }
+    header{
+      background:#000;
+      color:#fff;
+      padding:20px;
+      font-size:26px;
+      font-weight:bold;
+    }
+    .container{
+      padding:30px 20px;
+    }
+    .box{
+      background:#fff;
+      padding:25px;
+      border-radius:10px;
+      box-shadow:0 2px 8px rgba(0,0,0,.1);
+      max-width:500px;
+      margin:auto;
+    }
+    footer{
+      margin-top:30px;
+      font-size:14px;
+      color:#555;
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <h1>Norte Acessórios</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="#" id="carrinho-link">Carrinho 🛒</a>
-    </nav>
-  </header>
 
-  <main>
-    <h2>Bem-vindo à Norte Acessórios!</h2>
-    <p>Confira nossos produtos abaixo:</p>
+<header>
+  Norte Acessórios
+</header>
 
-    <div class="produtos-container">
+<div class="container">
+  <div class="box">
+    <p>Loja online de acessórios</p>
+    <p>📦 Enviamos para todo o Brasil</p>
+    <p>🚚 Entrega via Correios</p>
+    <p>💳 Pagamento via Pix (Inter)</p>
+    <p>📲 Atendimento pelo WhatsApp</p>
+  </div>
+</div>
 
-      <!-- Fones -->
-      <div class="produto">
-        <img src="img/fone1.jpg" alt="Fone Bluetooth X">
-        <h3>Fone Bluetooth X</h3>
-        <p>Preço: R$ 79,90</p>
-        <button onclick="adicionarCarrinho('Fone Bluetooth X', 79.90)">Adicionar ao carrinho</button>
-      </div>
+<footer>
+  © Norte Acessórios
+</footer>
 
-      <div class="produto">
-        <img src="img/fone2.jpg" alt="Fone Gamer Y">
-        <h3>Fone Gamer Y</h3>
-        <p>Preço: R$ 129,90</p>
-        <button onclick="adicionarCarrinho('Fone Gamer Y', 129.90)">Adicionar ao carrinho</button>
-      </div>
-
-      <!-- Capinhas -->
-      <div class="produto">
-        <img src="img/capinha1.jpg" alt="Capinha iPhone 14">
-        <h3>Capinha iPhone 14</h3>
-        <p>Preço: R$ 29,90</p>
-        <button onclick="adicionarCarrinho('Capinha iPhone 14', 29.90)">Adicionar ao carrinho</button>
-      </div>
-
-      <div class="produto">
-        <img src="img/capinha2.jpg" alt="Capinha Samsung S22">
-        <h3>Capinha Samsung S22</h3>
-        <p>Preço: R$ 25,90</p>
-        <button onclick="adicionarCarrinho('Capinha Samsung S22', 25.90)">Adicionar ao carrinho</button>
-      </div>
-
-      <!-- Carregadores -->
-      <div class="produto">
-        <img src="img/carregador1.jpg" alt="Carregador USB 20W">
-        <h3>Carregador USB 20W</h3>
-        <p>Preço: R$ 39,90</p>
-        <button onclick="adicionarCarrinho('Carregador USB 20W', 39.90)">Adicionar ao carrinho</button>
-      </div>
-
-      <div class="produto">
-        <img src="img/carregador2.jpg" alt="Carregador Turbo 30W">
-        <h3>Carregador Turbo 30W</h3>
-        <p>Preço: R$ 59,90</p>
-        <button onclick="adicionarCarrinho('Carregador Turbo 30W', 59.90)">Adicionar ao carrinho</button>
-      </div>
-
-      <!-- Bonés -->
-      <div class="produto">
-        <img src="img/bone1.jpg" alt="Boné Preto">
-        <h3>Boné Preto</h3>
-        <p>Preço: R$ 49,90</p>
-        <button onclick="adicionarCarrinho('Boné Preto', 49.90)">Adicionar ao carrinho</button>
-      </div>
-
-      <div class="produto">
-        <img src="img/bone2.jpg" alt="Boné Azul">
-        <h3>Boné Azul</h3>
-        <p>Preço: R$ 44,90</p>
-        <button onclick="adicionarCarrinho('Boné Azul', 44.90)">Adicionar ao carrinho</button>
-      </div>
-
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Norte Acessórios</p>
-  </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
