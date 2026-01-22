@@ -97,12 +97,6 @@ function abrir(id){
   const div = document.getElementById(id);
   div.style.display = div.style.display === "block" ? "none" : "block";
 }
-
-function abrirModelo(id, event){
-  event.stopPropagation();
-  const div = document.getElementById(id);
-  div.style.display = div.style.display === "block" ? "none" : "block";
-}
 </script>
 </head>
 
@@ -118,7 +112,8 @@ function abrirModelo(id, event){
 
   <div class="modelos" id="fone">
 
-    <div class="modelo" onclick="abrirModelo('fonepro', event)">
+    <!-- Fone Pro: ao clicar abre a página de pagamento -->
+    <div class="modelo" onclick="window.location.href='pagamento-fone-pro.html'; event.stopPropagation();">
       Fone Bluetooth Air Pods 3 — <span class="preco">R$ 49,90</span>
 
       <div class="foto" id="fonepro">
@@ -126,6 +121,7 @@ function abrirModelo(id, event){
       </div>
     </div>
 
+    <!-- Outro modelo sem link -->
     <div class="modelo">
       Fone Com Fio — <span class="preco">R$ 19,90</span>
     </div>
