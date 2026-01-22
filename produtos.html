@@ -35,34 +35,16 @@ header{
   border:1px solid #222;
   font-size:20px;
   font-weight:bold;
-  cursor:pointer;
-}
-
-.produto:hover{
-  background:#1a1a1a;
-}
-
-.modelos{
-  display:none;
-  background:#0b0b0b;
-  margin-top:15px;
-  padding:15px;
-  border-radius:6px;
-  font-size:16px;
 }
 
 .modelo{
   padding:10px;
   border-bottom:1px solid #222;
-  cursor:pointer;
+  margin-top:10px;
 }
 
 .modelo:last-child{
   border-bottom:none;
-}
-
-.modelo:hover{
-  background:#111;
 }
 
 .preco{
@@ -71,7 +53,6 @@ header{
 }
 
 .foto{
-  display:none;
   margin-top:10px;
 }
 
@@ -80,6 +61,25 @@ header{
   max-width:260px;
   border-radius:10px;
   margin-top:10px;
+}
+
+.button-comprar{
+  display:block;
+  margin:15px auto;
+  padding:12px 25px;
+  background:#00d4ff;
+  color:black;
+  font-weight:bold;
+  font-size:16px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  text-decoration:none;
+  text-align:center;
+}
+
+.button-comprar:hover{
+  background:#00bcd4;
 }
 
 .back{
@@ -107,40 +107,37 @@ function abrir(id){
 <div class="container">
 
 <!-- FONES -->
-<div class="produto" onclick="abrir('fone')">
+<div class="produto">
 🎧 Fones de Ouvido
 
-  <div class="modelos" id="fone">
+  <div class="modelo">
+    Fone Bluetooth Air Pods 3 — <span class="preco">R$ 49,90</span>
 
-    <!-- Fone Pro: ao clicar abre a página de pagamento -->
-    <div class="modelo" onclick="window.location.href='pagamento-fone-pro.html'; event.stopPropagation();">
-      Fone Bluetooth Air Pods 3 — <span class="preco">R$ 49,90</span>
-
-      <div class="foto" id="fonepro">
-        <img src="img/IMG_9737.jpeg">
-      </div>
+    <div class="foto">
+      <img src="img/IMG_9737.jpeg">
     </div>
 
-    <!-- Outro modelo sem link -->
-    <div class="modelo">
-      Fone Com Fio — <span class="preco">R$ 19,90</span>
-    </div>
-
+    <!-- Botão de comprar -->
+    <a href="pagamento-fone-pro.html" class="button-comprar">Comprar</a>
   </div>
+
+  <div class="modelo">
+    Fone Com Fio — <span class="preco">R$ 19,90</span>
+  </div>
+
 </div>
 
 <!-- BONÉS -->
-<div class="produto" onclick="abrir('bone')">
+<div class="produto">
 🧢 Bonés
 
-  <div class="modelos" id="bone">
-    <div class="modelo">
-      Boné Aba Curva — <span class="preco">R$ 59,90</span>
-    </div>
-    <div class="modelo">
-      Boné Aba Reta — <span class="preco">R$ 69,90</span>
-    </div>
+  <div class="modelo">
+    Boné Aba Curva — <span class="preco">R$ 59,90</span>
   </div>
+  <div class="modelo">
+    Boné Aba Reta — <span class="preco">R$ 69,90</span>
+  </div>
+
 </div>
 
 </div>
