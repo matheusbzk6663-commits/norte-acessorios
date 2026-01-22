@@ -1,137 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Produtos - Norte Acessórios</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Produtos - Norte Acessórios</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background:#000;
-      color:#fff;
-    }
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#000;
+  color:#fff;
+}
 
-    header{
-      padding:40px 20px;
-      text-align:center;
-      font-size:32px;
-      font-weight:bold;
-      border-bottom:1px solid #333;
-    }
+header{
+  padding:35px 20px;
+  text-align:center;
+  font-size:30px;
+  font-weight:bold;
+  border-bottom:1px solid #333;
+}
 
-    .container{
-      max-width:700px;
-      margin:auto;
-      padding:20px;
-    }
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:20px;
+}
 
-    .produto{
-      background:#111;
-      padding:18px;
-      margin-bottom:15px;
-      border-radius:8px;
-      border:1px solid #222;
-      cursor:pointer;
-      font-size:20px;
-      font-weight:bold;
-    }
+.produto{
+  background:#111;
+  padding:18px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:1px solid #222;
+  font-size:20px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .produto:hover{
-      background:#1a1a1a;
-    }
+.produto:hover{
+  background:#1a1a1a;
+}
 
-    .modelos{
-      display:none;
-      background:#0b0b0b;
-      padding:15px;
-      margin-top:10px;
-      border-radius:6px;
-      font-size:16px;
-      font-weight:normal;
-    }
+.modelos{
+  display:none;
+  background:#0b0b0b;
+  margin-top:15px;
+  padding:15px;
+  border-radius:6px;
+  font-size:16px;
+}
 
-    .modelo{
-      padding:8px 0;
-      border-bottom:1px solid #222;
-    }
+.modelo{
+  padding:10px;
+  border-bottom:1px solid #222;
+  cursor:pointer;
+}
 
-    .modelo:last-child{
-      border-bottom:none;
-    }
+.modelo:last-child{
+  border-bottom:none;
+}
 
-    .preco{
-      color:#0f0;
-      font-weight:bold;
-    }
+.modelo:hover{
+  background:#111;
+}
 
-    .back{
-      display:block;
-      text-align:center;
-      margin:30px 0;
-      color:#fff;
-      text-decoration:none;
-      font-weight:bold;
-    }
-  </style>
+.preco{
+  color:#0f0;
+  font-weight:bold;
+}
 
-  <script>
-    function abrir(id){
-      const div = document.getElementById(id);
-      div.style.display = div.style.display === "block" ? "none" : "block";
-    }
-  }
-</script><script>
-  function abrirModelo(id){
-    const div = document.getElementById(id);
-    div.style.display = div.style.display === "block" ? "none" : "block";
-  }
+.foto{
+  display:none;
+  margin-top:10px;
+}
+
+.foto img{
+  width:100%;
+  max-width:260px;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+.back{
+  display:block;
+  text-align:center;
+  margin:30px 0;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+}
+</style>
+
+<script>
+function abrir(id){
+  const div = document.getElementById(id);
+  div.style.display = div.style.display === "block" ? "none" : "block";
+}
+
+function abrirModelo(id, event){
+  event.stopPropagation();
+  const div = document.getElementById(id);
+  div.style.display = div.style.display === "block" ? "none" : "block";
+}
 </script>
 </head>
 
 <body>
 
-<header>
-  PRODUTOS
-</header>
+<header>PRODUTOS</header>
 
 <div class="container">
 
-  <!-- FONES -->
-  <div class="produto" onclick="abrir('fone')">
-    🎧 Fones de Ouvido
-    <div class="modelos" id="fone">
-      <div class="modelo">Fone Bluetooth Simples — <span class="preco">R$ 39,90</span></div>
-      <div class="modelo" onclick="abrirModelo('fonepro')" style="cursor:pointer;">
-  Fone Bluetooth Air Pods 3 — <span class="preco">R$ 49,90</span>
+<!-- FONES -->
+<div class="produto" onclick="abrir('fone')">
+🎧 Fones de Ouvido
 
-  <div id="fonepro" style="display:none; margin-top:15px;">
-    <img src="img/IMG_9670.jpeg" style="width:200px;border-radius:10px;margin:5px;">
-    <img src="img/IMG_9671.jpeg" style="width:200px;border-radius:10px;margin:5px;">
+  <div class="modelos" id="fone">
+
+    <div class="modelo" onclick="abrirModelo('fonepro', event)">
+      Fone Pro — <span class="preco">R$ 49,90</span>
+
+      <div class="foto" id="fonepro">
+        <img src="img/IMG_9670.jpeg">
+        <img src="img/IMG_9671.jpeg">
+      </div>
+    </div>
+
+    <div class="modelo">
+      Fone Com Fio — <span class="preco">R$ 19,90</span>
+    </div>
+
   </div>
 </div>
-      <div class="modelo">Fone Com Fio — <span class="preco">R$ 19,90</span></div>
-    </div>
-  </div>
 
-  <!-- BONÉS -->
-  <div class="produto" onclick="abrir('bone')">
-    🧢 Bonés
-    <div class="modelos" id="bone">
-      <div class="modelo">Boné Aba Curva — <span class="preco">R$ 59,90</span></div>
-      <div class="modelo">Boné Aba Reta — <span class="preco">R$ 69,90</span></div>
-    </div>
-  </div>
+<!-- BONÉS -->
+<div class="produto" onclick="abrir('bone')">
+🧢 Bonés
 
-  <!-- CORRENTES -->
-  <div class="produto" onclick="abrir('corrente')">
-    ⛓️ Correntes
-    <div class="modelos" id="corrente">
-      <div class="modelo">Corrente Prata — <span class="preco">R$ 79,90</span></div>
-      <div class="modelo">Corrente Dourada — <span class="preco">R$ 89,90</span></div>
+  <div class="modelos" id="bone">
+    <div class="modelo">
+      Boné Aba Curva — <span class="preco">R$ 59,90</span>
+    </div>
+    <div class="modelo">
+      Boné Aba Reta — <span class="preco">R$ 69,90</span>
     </div>
   </div>
+</div>
 
 </div>
 
