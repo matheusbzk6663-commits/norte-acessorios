@@ -16,39 +16,54 @@
     header{
       padding:40px 20px;
       text-align:center;
-      font-size:36px;
+      font-size:32px;
       font-weight:bold;
       border-bottom:1px solid #333;
     }
 
-    .sub{
-      text-align:center;
-      font-size:16px;
-      color:#bbb;
-      margin-bottom:30px;
-    }
-
     .container{
+      max-width:700px;
+      margin:auto;
       padding:20px;
     }
 
-    .item{
+    .produto{
       background:#111;
       padding:18px;
       margin-bottom:15px;
       border-radius:8px;
-      font-size:20px;
       border:1px solid #222;
+      cursor:pointer;
+      font-size:20px;
+      font-weight:bold;
     }
 
-    .item a{
-      text-decoration:none;
-      color:#fff;
-      display:block;
-    }
-
-    .item:hover{
+    .produto:hover{
       background:#1a1a1a;
+    }
+
+    .modelos{
+      display:none;
+      background:#0b0b0b;
+      padding:15px;
+      margin-top:10px;
+      border-radius:6px;
+      font-size:16px;
+      font-weight:normal;
+    }
+
+    .modelo{
+      padding:8px 0;
+      border-bottom:1px solid #222;
+    }
+
+    .modelo:last-child{
+      border-bottom:none;
+    }
+
+    .preco{
+      color:#0f0;
+      font-weight:bold;
     }
 
     .back{
@@ -60,6 +75,13 @@
       font-weight:bold;
     }
   </style>
+
+  <script>
+    function abrir(id){
+      const div = document.getElementById(id);
+      div.style.display = div.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </head>
 
 <body>
@@ -68,31 +90,39 @@
   PRODUTOS
 </header>
 
-<div class="sub">
-  Escolha o que você procura 👇
-</div>
-
 <div class="container">
 
-  <div class="item">
-    🎧 Fone Bluetooth
+  <!-- FONES -->
+  <div class="produto" onclick="abrir('fone')">
+    🎧 Fones de Ouvido
+    <div class="modelos" id="fone">
+      <div class="modelo">Fone Bluetooth Simples — <span class="preco">R$ 39,90</span></div>
+      <div class="modelo">Fone Bluetooth Air Pods 3 — <span class="preco">R$ 49,90</span></div>
+      <div class="modelo">Fone Com Fio — <span class="preco">R$ 19,90</span></div>
+    </div>
   </div>
 
-  <div class="item">
-    📱 Capinhas de Celular
-  </div>
-
-  <div class="item">
+  <!-- BONÉS -->
+  <div class="produto" onclick="abrir('bone')">
     🧢 Bonés
+    <div class="modelos" id="bone">
+      <div class="modelo">Boné Aba Curva — <span class="preco">R$ 59,90</span></div>
+      <div class="modelo">Boné Aba Reta — <span class="preco">R$ 69,90</span></div>
+    </div>
   </div>
 
-  <div class="item">
-    🔗 Correntes
+  <!-- CORRENTES -->
+  <div class="produto" onclick="abrir('corrente')">
+    ⛓️ Correntes
+    <div class="modelos" id="corrente">
+      <div class="modelo">Corrente Prata — <span class="preco">R$ 79,90</span></div>
+      <div class="modelo">Corrente Dourada — <span class="preco">R$ 89,90</span></div>
+    </div>
   </div>
 
 </div>
 
-<a class="back" href="index.html">⬅ Voltar para a página inicial</a>
+<a class="back" href="index.html">⬅ Voltar para início</a>
 
 </body>
 </html>
