@@ -30,28 +30,50 @@ textarea{height:120px}
 <input id="numero" placeholder="Número da casa">
 <input id="cidade" placeholder="Cidade / Estado">
 
-<button onclick="gerar()">Gerar Pix</button>
+<button id="btnGerar">Gerar Pix</button>
 
 <div class="box" id="pix">
-<textarea readonly>00020126580014br.gov.bcb.pix01363f22176e-5f34-4997-b601-9b8f231bb49a520400005303986540539.905802BR5916Norte Acessorios6009Sao Paulo62240520daqr217180711283628563041D67
-<button onclick="copiar()">Copiar código Pix</button>
-<div id="ok"></div>
+
+  <textarea id="pixCode" readonly>
+00020126580014br.gov.bcb.pix01363f22176e-5f34-4997-b601-9b8f231bb49a520400005303986540539.905802BR5916Norte Acessorios6009Sao Paulo62240520daqr217180711283628563041D67
+  </textarea>
+
+  <button id="btnCopiar">Copiar código Pix</button>
+
+  <div id="ok"></div>
+
 </div>
 
 </div>
 
 <script>
-function gerar(){
-  pix.style.display="block";
-}
-function copiar(){
-  document.getElementById("msgFinal").innerHTML =
-    '<div style="padding:15px;background:#0f0;color:#000;border-radius:10px;text-align:center;">' +
+document.getElementById("btnGerar").addEventListener("click", function(){
+  var nome = document.getElementById("nome").value;
+  var cpf = document.getElementById("cpf").value;
+  var cep = document.getElementById("cep").value;
+  var endereco = document.getElementById("endereco").value;
+  var numero = document.getElementById("numero").value;
+  var cidade = document.getElementById("cidade").value;
+
+  if(!nome || !cpf || !cep || !endereco || !numero || !cidade){
+    alert("Preencha todos os campos");
+    return;
+  }
+
+  document.getElementById("pix").style.display="block";
+});
+
+document.getElementById("btnCopiar").addEventListener("click", function(){
+  var pix = document.getElementById("pixCode");
+  pix.select();
+  document.execCommand("copy");
+
+  document.getElementById("ok").innerHTML =
+    '<div style="padding:15px;background:#0f0;color:#000;border-radius:10px;text-align:center;margin-top:15px;">' +
     '<b>✅ Pedido recebido com sucesso!</b><br><br>' +
-    'Assim que o pagamento for identificado, seu pedido será preparado e enviado.<br><br>' +
-    'Obrigado por comprar na <b>Norte Acessórios</b>.' +
+    'Após o pagamento, envie o comprovante no Instagram <b>@_norteacessorios</b>' +
     '</div>';
-}
+});
 </script>
 
 </body>
