@@ -97,7 +97,7 @@ header{
   font-weight:bold;
 }
 
-/* MODAL IMG */
+/* MODAL */
 #modalImg{
   display:none;
   position:fixed;
@@ -109,11 +109,13 @@ header{
   background:rgba(0,0,0,0.95);
   text-align:center;
 }
+
 #modalImg img{
   max-width:90%;
   max-height:90%;
   margin-top:5%;
 }
+
 #modalImg span{
   position:absolute;
   top:20px;
@@ -130,7 +132,8 @@ function abrir(id){
   el.style.display = el.style.display === "block" ? "none" : "block";
 }
 
-function abrirImg(src){
+function abrirImg(src, event){
+  event.stopPropagation();
   document.getElementById("modalImg").style.display="block";
   document.getElementById("imgGrande").src=src;
 }
@@ -156,7 +159,7 @@ function fecharImg(){
 
     <!-- FONE PRO -->
     <div class="modelo">
-      <img src="img/IMG_9737.jpeg" onclick="abrirImg(this.src)">
+      <img src="img/IMG_9737.jpeg" onclick="abrirImg(this.src, event)">
       <div class="nome">Fone Bluetooth Air Pods 3</div>
       <div class="preco">R$ 49,90</div>
       <a class="comprar" href="pagamento-fone-pro.html">Comprar</a>
@@ -164,7 +167,7 @@ function fecharImg(){
 
     <!-- FONE SIMPLES -->
     <div class="modelo">
-      <img src="img/334F6D3A-FE62-4D33-8657-BB23756633CE.jpeg" onclick="abrirImg(this.src)">
+      <img src="img/334F6D3A-FE62-4D33-8657-BB23756633CE.jpeg" onclick="abrirImg(this.src, event)">
       <div class="nome">Fone Bluetooth Simples</div>
       <div class="preco">R$ 39,90</div>
       <a class="comprar" href="pagamento-fone-simples.html">Comprar</a>
@@ -178,7 +181,6 @@ function fecharImg(){
 🧢 Bonés
 
   <div class="modelos" id="bones">
-
     <div class="modelo">
       <div class="nome">Boné Aba Curva</div>
       <div class="preco">R$ 59,90</div>
@@ -188,7 +190,6 @@ function fecharImg(){
       <div class="nome">Boné Aba Reta</div>
       <div class="preco">R$ 69,90</div>
     </div>
-
   </div>
 </div>
 
@@ -197,9 +198,9 @@ function fecharImg(){
 <a class="back" href="index.html">⬅ Voltar para início</a>
 
 <!-- MODAL -->
-<div id="modalImg">
-  <span onclick="fecharImg()">&times;</span>
-  <img id="imgGrande">
+<div id="modalImg" onclick="fecharImg()">
+  <span>✕</span>
+  <img id="imgGrande" onclick="event.stopPropagation()">
 </div>
 
 </body>
