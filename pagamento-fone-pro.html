@@ -6,83 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{
-  background:#000;
-  color:#fff;
-  font-family:Arial, sans-serif;
-  padding:20px;
-}
-
-.container{
-  max-width:500px;
-  margin:auto;
-  background:#111;
-  padding:20px;
-  border-radius:10px;
-}
-
-h1{
-  text-align:center;
-}
-
-img{
-  width:100%;
-  max-width:260px;
-  display:block;
-  margin:15px auto;
-  border-radius:10px;
-}
-
-.preco{
-  text-align:center;
-  font-size:22px;
-  color:#0f0;
-  margin-bottom:20px;
-}
-
-input{
-  width:100%;
-  padding:12px;
-  margin-bottom:10px;
-  border-radius:6px;
-  border:none;
-  font-size:15px;
-}
-
-button{
-  width:100%;
-  padding:15px;
-  background:#00c853;
-  color:#000;
-  font-weight:bold;
-  font-size:16px;
-  border:none;
-  border-radius:30px;
-  cursor:pointer;
-  margin-top:10px;
-}
-
-textarea{
-  width:100%;
-  height:120px;
-  margin-top:15px;
-  border-radius:8px;
-  padding:10px;
-  font-size:14px;
-}
-
-.dados, .pix{
-  display:none;
-  margin-top:20px;
-}
-
-.back{
-  display:block;
-  text-align:center;
-  margin-top:20px;
-  color:#00ff99;
-  text-decoration:none;
-}
+body{background:#000;color:#fff;font-family:Arial;padding:20px}
+.container{max-width:500px;margin:auto;background:#111;padding:20px;border-radius:10px}
+h1{text-align:center}
+img{width:100%;max-width:260px;display:block;margin:15px auto;border-radius:10px}
+.preco{text-align:center;font-size:22px;color:#0f0;margin-bottom:20px}
+input{width:100%;padding:12px;margin-bottom:10px;border-radius:6px;border:none;font-size:15px}
+button{width:100%;padding:15px;background:#00c853;color:#000;font-weight:bold;font-size:16px;border:none;border-radius:30px;cursor:pointer;margin-top:10px}
+textarea{width:100%;height:120px;margin-top:15px;border-radius:8px;padding:10px;font-size:14px}
+.box{display:none;margin-top:20px}
+.back{display:block;text-align:center;margin-top:20px;color:#00ff99;text-decoration:none}
 </style>
 </head>
 
@@ -91,34 +24,28 @@ textarea{
 <div class="container">
 
 <h1>Fone Bluetooth Air Pods 3</h1>
-
 <img src="img/IMG_9737.jpeg">
-
 <p class="preco">💰 R$ 49,90</p>
 
-<input type="text" id="nome" placeholder="Nome completo">
-<input type="text" id="cpf" placeholder="CPF">
-<input type="text" id="cep" placeholder="CEP">
-<input type="text" id="endereco" placeholder="Endereço completo">
-<input type="text" id="numero" placeholder="Número da casa">
-<input type="text" id="cidade" placeholder="Cidade / Estado">
+<input id="nome" placeholder="Nome completo">
+<input id="cpf" placeholder="CPF">
+<input id="cep" placeholder="CEP">
+<input id="endereco" placeholder="Endereço completo">
+<input id="numero" placeholder="Número da casa">
+<input id="cidade" placeholder="Cidade / Estado">
 
-<button onclick="gerarPix()">Gerar Pix</button>
+<button id="btnGerar">Gerar Pix</button>
 
-<div class="dados" id="dados">
-  <h3>📦 Dados para entrega</h3>
-  <p id="resumo"></p>
-</div>
-
-<div class="pix" id="pix">
+<div class="box" id="areaPix">
   <h3>💸 Pague com Pix</h3>
-  <textarea readonly id="pixCode">00020126580014br.gov.bcb.pix01363f22176e-5f34-4997-b601-9b8f231bb49a520400005303986540549.905802BR5916Norte Acessorios6009Sao Paulo62240520daqr21718071124307686304249A</textarea>
 
-  <button onclick="copiarPix()">Copiar código Pix</button>
+  <div id="resumo" style="font-size:14px;margin-bottom:10px"></div>
 
-  <p style="font-size:14px;margin-top:10px;">
-    Após o pagamento, envie o comprovante junto com seus dados.
-  </p>
+  <textarea id="pixCode" readonly>00020126580014br.gov.bcb.pix01363f22176e-5f34-4997-b601-9b8f231bb49a520400005303986540549.905802BR5916Norte Acessorios6009Sao Paulo62240520daqr21718071124307686304249A</textarea>
+
+  <button id="btnCopiar">Copiar código Pix</button>
+
+  <div id="msgFinal" style="margin-top:15px"></div>
 </div>
 
 <a href="produto-fone.html" class="back">⬅ Voltar</a>
@@ -126,50 +53,42 @@ textarea{
 </div>
 
 <script>
-function gerarPix(){
-  const nome = document.getElementById("nome").value;
-  const cpf = document.getElementById("cpf").value;
-  const cep = document.getElementById("cep").value;
-  const endereco = document.getElementById("endereco").value;
-  const numero = document.getElementById("numero").value;
-  const cidade = document.getElementById("cidade").value;
+document.getElementById("btnGerar").addEventListener("click", function(){
+
+  var nome = document.getElementById("nome").value;
+  var cpf = document.getElementById("cpf").value;
+  var cep = document.getElementById("cep").value;
+  var endereco = document.getElementById("endereco").value;
+  var numero = document.getElementById("numero").value;
+  var cidade = document.getElementById("cidade").value;
 
   if(!nome || !cpf || !cep || !endereco || !numero || !cidade){
     alert("Preencha todos os campos");
     return;
   }
 
-  document.getElementById("resumo").innerHTML = `
-<b>Nome:</b> ${nome}<br>
-<b>CPF:</b> ${cpf}<br>
-<b>Endereço:</b> ${endereco}, Nº ${numero}<br>
-<b>CEP:</b> ${cep}<br>
-<b>Cidade:</b> ${cidade}
-`;
+  document.getElementById("resumo").innerHTML =
+    "<b>Nome:</b> " + nome + "<br>" +
+    "<b>CPF:</b> " + cpf + "<br>" +
+    "<b>Endereço:</b> " + endereco + ", Nº " + numero + "<br>" +
+    "<b>CEP:</b> " + cep + "<br>" +
+    "<b>Cidade:</b> " + cidade;
 
-  document.getElementById("dados").style.display = "block";
-  document.getElementById("pix").style.display = "block";
-}
+  document.getElementById("areaPix").style.display = "block";
+});
 
-function copiarPix(){
-  const pix = document.getElementById("pixCode");
+document.getElementById("btnCopiar").addEventListener("click", function(){
+  var pix = document.getElementById("pixCode");
   pix.select();
-  pix.setSelectionRange(0, 99999);
   document.execCommand("copy");
 
-  document.getElementById("pix").innerHTML += `
-    <div style="margin-top:20px;padding:15px;background:#0f0;color:#000;border-radius:10px;">
-      <b>✅ Pedido registrado!</b><br><br>
-      Agora realize o pagamento no seu banco.<br><br>
-      Após pagar, envie o comprovante no WhatsApp junto com seus dados.
-      <br><br>
-      <a href="https://wa.me/5511953021298" 
-         style="display:inline-block;margin-top:10px;padding:10px 20px;background:#000;color:#0f0;border-radius:20px;text-decoration:none;font-weight:bold;">
-         Enviar comprovante no WhatsApp
-      </a>
-    </div>
-  `;
-}
+  document.getElementById("msgFinal").innerHTML =
+    '<div style="padding:15px;background:#0f0;color:#000;border-radius:10px;">' +
+    '<b>✅ Pedido registrado!</b><br><br>' +
+    'Agora realize o pagamento e envie o comprovante no WhatsApp.<br><br>' +
+    '<a href="https://wa.me/5511953021298" style="background:#000;color:#0f0;padding:10px 20px;border-radius:20px;text-decoration:none;font-weight:bold;">Enviar comprovante</a>' +
+    '</div>';
+});
 </script>
 
 </body>
