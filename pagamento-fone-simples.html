@@ -45,9 +45,12 @@ function gerar(){
   pix.style.display="block";
 }
 function copiar(){
-  document.querySelector("textarea").select();
-  document.execCommand("copy");
-  ok.innerHTML="<div style='background:#0f0;color:#000;padding:15px;border-radius:10px;text-align:center;margin-top:10px'>✅ Pedido recebido com sucesso!</div>";
+  document.getElementById("msgFinal").innerHTML =
+    '<div style="padding:15px;background:#0f0;color:#000;border-radius:10px;text-align:center;">' +
+    '<b>✅ Pedido recebido com sucesso!</b><br><br>' +
+    'Assim que o pagamento for identificado, seu pedido será preparado e enviado.<br><br>' +
+    'Obrigado por comprar na <b>Norte Acessórios</b>.' +
+    '</div>';
 }
 </script>
 
