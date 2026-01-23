@@ -96,28 +96,23 @@ textarea{
 
 <p class="preco">💰 R$ 49,90</p>
 
-<!-- FORMULÁRIO -->
-<input type="text" id="nome" placeholder="Nome completo" required>
-<input type="text" id="cpf" placeholder="CPF" required>
-<input type="text" id="cep" placeholder="CEP" required>
-<input type="text" id="endereco" placeholder="Endereço completo" required>
-<input type="text" id="numero" placeholder="Número da casa" required>
-<input type="text" id="cidade" placeholder="Cidade / Estado" required>
+<input type="text" id="nome" placeholder="Nome completo">
+<input type="text" id="cpf" placeholder="CPF">
+<input type="text" id="cep" placeholder="CEP">
+<input type="text" id="endereco" placeholder="Endereço completo">
+<input type="text" id="numero" placeholder="Número da casa">
+<input type="text" id="cidade" placeholder="Cidade / Estado">
 
 <button onclick="gerarPix()">Gerar Pix</button>
 
-<!-- DADOS DO CLIENTE -->
 <div class="dados" id="dados">
   <h3>📦 Dados para entrega</h3>
   <p id="resumo"></p>
 </div>
 
-<!-- PIX -->
 <div class="pix" id="pix">
   <h3>💸 Pague com Pix</h3>
-  <textarea readonly id="pixCode">
-00020126580014br.gov.bcb.pix01363f22176e-5f34-4997-b601-9b8f231bb49a520400005303986540549.905802BR5916Norte Acessorios6009Sao Paulo62240520daqr21718071124307686304249A
-  </textarea>
+  <textarea readonly id="pixCode">00020126580014br.gov.bcb.pix01363f22176e-5f34-4997-b601-9b8f231bb49a520400005303986540549.905802BR5916Norte Acessorios6009Sao Paulo62240520daqr21718071124307686304249A</textarea>
 
   <button onclick="copiarPix()">Copiar código Pix</button>
 
@@ -174,7 +169,6 @@ function copiarPix(){
       </a>
     </div>
   `;
-}
 }
 </script>
 
