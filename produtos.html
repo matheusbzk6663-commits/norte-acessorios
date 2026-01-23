@@ -8,15 +8,15 @@
 <style>
 body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family:Arial, sans-serif;
   background:#000;
   color:#fff;
 }
 
 header{
-  padding:35px 20px;
+  padding:30px;
   text-align:center;
-  font-size:30px;
+  font-size:28px;
   font-weight:bold;
   border-bottom:1px solid #333;
 }
@@ -27,6 +27,7 @@ header{
   padding:20px;
 }
 
+/* PRODUTO PRINCIPAL */
 .produto{
   background:#111;
   padding:18px;
@@ -35,51 +36,61 @@ header{
   border:1px solid #222;
   font-size:20px;
   font-weight:bold;
+  cursor:pointer;
 }
 
+.produto:hover{
+  background:#1a1a1a;
+}
+
+/* MODELOS */
+.modelos{
+  display:none;
+  margin-top:15px;
+}
+
+/* MODELO */
 .modelo{
-  padding:10px;
-  border-bottom:1px solid #222;
+  background:#0b0b0b;
+  padding:15px;
+  margin-bottom:10px;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.modelo:hover{
+  background:#111;
+}
+
+.detalhes{
+  display:none;
   margin-top:10px;
 }
 
-.modelo:last-child{
-  border-bottom:none;
-}
-
-.preco{
-  color:#0f0;
-  font-weight:bold;
-}
-
-.foto{
-  margin-top:10px;
-}
-
-.foto img{
+.detalhes img{
   width:100%;
   max-width:260px;
   border-radius:10px;
   margin-top:10px;
 }
 
-.button-comprar{
-  display:block;
-  margin:15px auto;
-  padding:12px 25px;
-  background:#00d4ff;
-  color:black;
+.preco{
+  color:#0f0;
   font-weight:bold;
-  font-size:16px;
-  border:none;
-  border-radius:12px;
-  cursor:pointer;
-  text-decoration:none;
-  text-align:center;
+  font-size:18px;
+  margin-top:10px;
 }
 
-.button-comprar:hover{
-  background:#00bcd4;
+.comprar{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 22px;
+  background:#00c853;
+  color:#000;
+  font-weight:bold;
+  border-radius:25px;
+  text-decoration:none;
 }
 
 .back{
@@ -94,10 +105,17 @@ header{
 
 <script>
 function abrir(id){
-  const div = document.getElementById(id);
-  div.style.display = div.style.display === "block" ? "none" : "block";
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "block" ? "none" : "block";
+}
+
+function abrirDetalhes(id, event){
+  event.stopPropagation();
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "block" ? "none" : "block";
 }
 </script>
+
 </head>
 
 <body>
@@ -107,37 +125,42 @@ function abrir(id){
 <div class="container">
 
 <!-- FONES -->
-<div class="produto">
+<div class="produto" onclick="abrir('fones')">
 🎧 Fones de Ouvido
 
-  <div class="modelo">
-    Fone Bluetooth Air Pods 3 — <span class="preco">R$ 49,90</span>
+  <div class="modelos" id="fones">
 
-    <div class="foto">
-      <img src="img/IMG_9737.jpeg">
+    <!-- FONE PRO -->
+    <div class="modelo" onclick="abrirDetalhes('fonepro', event)">
+      Fone Bluetooth Air Pods 3
+
+      <div class="detalhes" id="fonepro">
+        <img src="img/IMG_9737.jpeg">
+        <div class="preco">R$ 49,90</div>
+        <a class="comprar" href="pagamento-fone-pro.html">Comprar</a>
+      </div>
     </div>
 
-    <!-- Botão de comprar -->
-    <a href="pagamento-fone-pro.html" class="button-comprar">Comprar</a>
-  </div>
+    <!-- OUTRO MODELO -->
+    <div class="modelo">
+      Fone com Fio — <span class="preco">R$ 19,90</span>
+    </div>
 
-  <div class="modelo">
-    Fone Com Fio — <span class="preco">R$ 19,90</span>
   </div>
-
 </div>
 
 <!-- BONÉS -->
-<div class="produto">
+<div class="produto" onclick="abrir('bones')">
 🧢 Bonés
 
-  <div class="modelo">
-    Boné Aba Curva — <span class="preco">R$ 59,90</span>
+  <div class="modelos" id="bones">
+    <div class="modelo">
+      Boné Aba Curva — <span class="preco">R$ 59,90</span>
+    </div>
+    <div class="modelo">
+      Boné Aba Reta — <span class="preco">R$ 69,90</span>
+    </div>
   </div>
-  <div class="modelo">
-    Boné Aba Reta — <span class="preco">R$ 69,90</span>
-  </div>
-
 </div>
 
 </div>
