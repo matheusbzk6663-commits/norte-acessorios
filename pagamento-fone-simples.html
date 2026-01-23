@@ -68,11 +68,19 @@ document.getElementById("btnCopiar").addEventListener("click", function(){
   pix.select();
   document.execCommand("copy");
 
+document.getElementById("btnCopiar").addEventListener("click", function(){
+  var pix = document.getElementById("pixCode");
+  pix.select();
+  document.execCommand("copy");
+
   document.getElementById("ok").innerHTML =
-    '<div style="padding:15px;background:#0f0;color:#000;border-radius:10px;text-align:center;margin-top:15px;">' +
-    '<b>✅ Pedido recebido com sucesso!</b><br><br>' +
-    'Após o pagamento, envie o comprovante no Instagram <b>@_norteacessorios</b>' +
+    '<div style="margin-top:20px;padding:15px;background:#0f0;color:#000;border-radius:10px;">' +
+    '<b>✅ Pedido recebido!</b><br><br>' +
+    'Agora realize o pagamento no seu banco.<br><br>' +
+    'Assim que o pagamento for identificado, seu pedido será preparado e enviado.<br><br>' +
+    'Obrigado por comprar na <b>Norte Acessórios</b>.' +
     '</div>';
+});
 });
 </script>
 
