@@ -1,1 +1,55 @@
-.
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Finalizar Compra - Norte Acessórios</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{background:#000;color:#fff;font-family:Arial;padding:20px}
+.container{max-width:500px;margin:auto;background:#111;padding:20px;border-radius:10px}
+img{width:100%;max-width:260px;display:block;margin:15px auto;border-radius:10px}
+.preco{text-align:center;font-size:22px;color:#0f0;margin-bottom:20px}
+input,button,textarea{width:100%;padding:12px;margin-bottom:10px;border-radius:6px;border:none;font-size:15px}
+button{background:#00c853;color:#000;font-weight:bold;border-radius:30px;cursor:pointer}
+textarea{height:120px}
+.box{display:none;margin-top:20px}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h2 style="text-align:center">Fone Bluetooth Simples</h2>
+<img src="img/334F6D3A-FE62-4D33-8657-BB23756633CE.jpeg">
+<p class="preco">R$ 29,90</p>
+
+<input id="nome" placeholder="Nome completo">
+<input id="cpf" placeholder="CPF">
+<input id="cep" placeholder="CEP">
+<input id="endereco" placeholder="Endereço completo">
+<input id="numero" placeholder="Número da casa">
+<input id="cidade" placeholder="Cidade / Estado">
+
+<button onclick="gerar()">Gerar Pix</button>
+
+<div class="box" id="pix">
+<textarea readonly>00020126580014br.gov.bcb.pix01363f22176e-5f34-4997-b601-9b8f231bb49a520400005303986540549.905802BR5916Norte Acessorios6009Sao Paulo62240520daqr21718071124307686304249A</textarea>
+<button onclick="copiar()">Copiar código Pix</button>
+<div id="ok"></div>
+</div>
+
+</div>
+
+<script>
+function gerar(){
+  pix.style.display="block";
+}
+function copiar(){
+  document.querySelector("textarea").select();
+  document.execCommand("copy");
+  ok.innerHTML="<div style='background:#0f0;color:#000;padding:15px;border-radius:10px;text-align:center;margin-top:10px'>✅ Pedido recebido com sucesso!</div>";
+}
+</script>
+
+</body>
+</html>
