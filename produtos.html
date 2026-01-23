@@ -27,70 +27,65 @@ header{
   padding:20px;
 }
 
-/* PRODUTO PRINCIPAL */
 .produto{
   background:#111;
   padding:18px;
   margin-bottom:15px;
-  border-radius:8px;
+  border-radius:10px;
   border:1px solid #222;
   font-size:20px;
   font-weight:bold;
   cursor:pointer;
 }
 
-.produto:hover{
-  background:#1a1a1a;
-}
-
-/* MODELOS */
 .modelos{
   display:none;
   margin-top:15px;
 }
 
-/* MODELO */
+/* CARD MODELO */
 .modelo{
   background:#0b0b0b;
   padding:15px;
-  margin-bottom:10px;
-  border-radius:6px;
-  font-size:16px;
-  cursor:pointer;
+  margin-bottom:15px;
+  border-radius:10px;
+  border:1px solid #1c1c1c;
 }
 
-.modelo:hover{
-  background:#111;
-}
-
-.detalhes{
-  display:none;
-  margin-top:10px;
-}
-
-.detalhes img{
+.modelo img{
   width:100%;
   max-width:260px;
   border-radius:10px;
+  display:block;
+  margin:10px auto;
+}
+
+.nome{
+  text-align:center;
+  font-size:18px;
   margin-top:10px;
+  font-weight:bold;
 }
 
 .preco{
   color:#0f0;
   font-weight:bold;
-  font-size:18px;
-  margin-top:10px;
+  font-size:20px;
+  text-align:center;
+  margin:8px 0;
 }
 
 .comprar{
-  display:inline-block;
-  margin-top:10px;
-  padding:10px 22px;
+  display:block;
+  text-align:center;
+  margin:10px auto 0;
+  padding:12px 25px;
   background:#00c853;
   color:#000;
   font-weight:bold;
   border-radius:25px;
   text-decoration:none;
+  width:160px;
 }
 
 .back{
@@ -105,12 +100,6 @@ header{
 
 <script>
 function abrir(id){
-  const el = document.getElementById(id);
-  el.style.display = el.style.display === "block" ? "none" : "block";
-}
-
-function abrirDetalhes(id, event){
-  event.stopPropagation();
   const el = document.getElementById(id);
   el.style.display = el.style.display === "block" ? "none" : "block";
 }
@@ -131,19 +120,17 @@ function abrirDetalhes(id, event){
   <div class="modelos" id="fones">
 
     <!-- FONE PRO -->
-    <div class="modelo" onclick="abrirDetalhes('fonepro', event)">
-      Fone Bluetooth Air Pods 3 - <span class="preco">R$ 49,90</span>
-
-      <div class="detalhes" id="fonepro">
-        <img src="img/IMG_9737.jpeg">
-        <div class="preco">R$ 49,90</div>
-        <a class="comprar" href="pagamento-fone-pro.html">Comprar</a>
-      </div>
+    <div class="modelo">
+      <img src="img/IMG_9737.jpeg">
+      <div class="nome">Fone Bluetooth Air Pods 3</div>
+      <div class="preco">R$ 49,90</div>
+      <a class="comprar" href="pagamento-fone-pro.html">Comprar</a>
     </div>
 
-    <!-- OUTRO MODELO -->
+    <!-- FONE COM FIO -->
     <div class="modelo">
-      Fone com Fio — <span class="preco">R$ 19,90</span>
+      <div class="nome">Fone com Fio</div>
+      <div class="preco">R$ 19,90</div>
     </div>
 
   </div>
@@ -154,12 +141,17 @@ function abrirDetalhes(id, event){
 🧢 Bonés
 
   <div class="modelos" id="bones">
+
     <div class="modelo">
-      Boné Aba Curva — <span class="preco">R$ 59,90</span>
+      <div class="nome">Boné Aba Curva</div>
+      <div class="preco">R$ 59,90</div>
     </div>
+
     <div class="modelo">
-      Boné Aba Reta — <span class="preco">R$ 69,90</span>
+      <div class="nome">Boné Aba Reta</div>
+      <div class="preco">R$ 69,90</div>
     </div>
+
   </div>
 </div>
 
