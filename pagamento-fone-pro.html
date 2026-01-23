@@ -161,7 +161,20 @@ function copiarPix(){
   pix.select();
   pix.setSelectionRange(0, 99999);
   document.execCommand("copy");
-  alert("Código Pix copiado!");
+
+  document.getElementById("pix").innerHTML += `
+    <div style="margin-top:20px;padding:15px;background:#0f0;color:#000;border-radius:10px;">
+      <b>✅ Pedido registrado!</b><br><br>
+      Agora realize o pagamento no seu banco.<br><br>
+      Após pagar, envie o comprovante no WhatsApp junto com seus dados.
+      <br><br>
+      <a href="https://wa.me/55SEUNUMEROAQUI" 
+         style="display:inline-block;margin-top:10px;padding:10px 20px;background:#000;color:#0f0;border-radius:20px;text-decoration:none;font-weight:bold;">
+         Enviar comprovante no WhatsApp
+      </a>
+    </div>
+  `;
+}
 }
 </script>
 
